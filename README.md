@@ -4,9 +4,10 @@
     # Sistema de Reserva de Citas Médicas
 
 <p align="center">
-    <a href="https://github.com/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel"><img src="https://img.shields.io/github/license/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel" alt="License"></a>
-    <a href="https://github.com/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel/stargazers"><img src="https://img.shields.io/github/stars/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel" alt="Stars"></a>
-    <a href="https://github.com/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel/issues"><img src="https://img.shields.io/github/issues/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel" alt="Issues"></a>
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
 Sistema web desarrollado en Laravel para gestionar reservas de citas médicas de manera eficiente. Este sistema está diseñado para ser utilizado por **Administradores** y **Secretarias** para gestionar pacientes, doctores, consultorios, horarios y citas médicas.
