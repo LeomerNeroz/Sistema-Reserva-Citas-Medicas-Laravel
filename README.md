@@ -30,6 +30,9 @@ Los **Doctores** y **Pacientes** no tienen acceso al sistema como usuarios con i
 #### 1. **Módulo de Inicio de Sesión**
 - Sistema de autenticación para **Administradores** y **Secretarias**.
 - Panel de administración personalizado según el rol del usuario.
+- Recuperación de contraseña mediante preguntas de seguridad:
+  - Los usuarios pueden restablecer su contraseña respondiendo a preguntas de seguridad configuradas durante el registro.
+  - Proceso seguro y fácil de usar para recuperar el acceso en caso de olvido de credenciales.
 
 #### 2. **Módulo de Usuarios**
 - **Listado de usuarios:** Visualización de todos los usuarios registrados.
@@ -203,6 +206,14 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## Licencia
 
+Este proyecto está bajo la licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).  
+© 2023 Tu Nombre o Empresa
+
+Esta obra está licenciada bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1).  
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">  
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">
+
+Para más detalles, consulta el archivo [LICENSE](LICENSE).
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
