@@ -1,8 +1,7 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 <p align="center">
-    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300">
-</p>
 
-# Sistema de Reserva de Citas Médicas
+    # Sistema de Reserva de Citas Médicas
 
 <p align="center">
     <a href="https://github.com/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel"><img src="https://img.shields.io/github/license/LeomerNeroz/Sistema-Reserva-Citas-Medicas-Laravel" alt="License"></a>
@@ -209,11 +208,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## Licencia
 
 Este proyecto está bajo la licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).  
-© 2023 Tu Nombre o Empresa
+©
 
 Esta obra está licenciada bajo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1).  
 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">  
 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">
 
 Para más detalles, consulta el archivo [LICENSE](LICENSE).
+
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
