@@ -87,7 +87,7 @@ Los **Doctores** y **Pacientes** no tienen acceso al sistema como usuarios con i
 - **Reporte de horarios:** Generación de reportes en formato Excel y PDF.
 - **Paginación:** Navegación entre páginas para grandes listados.
 
-#### 7. **Módulo de Citas Médicas**
+#### 7. **Módulo de reservas**
 - **Listado de citas:** Visualización de todas las citas agendadas.
 - **Registro de citas:** Agendamiento de nuevas citas médicas.
 - **Visor de datos:** Detalles completos de cada cita (paciente, doctor, fecha, hora).
