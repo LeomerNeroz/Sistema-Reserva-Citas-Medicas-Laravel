@@ -1,4 +1,5 @@
-@extends ('layouts.admin')
+@extends('layouts.admin')
+
 @section('content')
 
 <div class="row">
@@ -14,7 +15,7 @@
             <h3 class="card-title">Llene los datos</h3>
         </div>
         <div class="card-body">
-            <form action="{{url('/admin/historial/create')}}" method="POST">
+            <form action="{{ url('/admin/historial/create') }}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
@@ -30,7 +31,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="fecha_visita">Fecha De La Cita Medica</label>
-                            <input type="date" name="fecha_visita" value="{{ date('Y-m-d') }}" class="form-control">
+                            <input type="date" id="fecha_visita" name="fecha_visita" value="{{ date('Y-m-d') }}" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -57,7 +58,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <a href="{{ url('admin/historial')}}" class="btn btn-secondary">Cancelar</a>
+                            <a href="{{ url('admin/historial') }}" class="btn btn-secondary">Cancelar</a>
                             <button type="submit" class="btn btn-primary">Registrar Historial</button>
                         </div>
                     </div>

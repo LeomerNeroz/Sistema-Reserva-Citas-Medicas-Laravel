@@ -5,15 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reiniciar Contraseña</title>
 
-  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  
-  <link rel="stylesheet" href="dist/css/adminlte.min.css?v=3.2.0">
-  
+
   <style>
     body {
       display: flex;
@@ -68,6 +61,11 @@
       font-weight: bold;
       color: #0b0c0c;
     }
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body class="hold-transition login-page">
@@ -79,7 +77,7 @@
       <div class="card-body">
         <p class="login-box-msg">Introduce tu nueva contraseña para completar el proceso de recuperación.</p>
 
-        <form action="{{ route('reset.password') }}" method="POST">
+        <form id="resetPasswordForm" action="{{ route('reset.password') }}" method="POST">
           @csrf
           <input type="hidden" name="user_id" value="{{ $user->id }}">
 
@@ -91,6 +89,10 @@
           <div class="form-group">
             <label for="password_confirmation" class="col-form-label">Confirmar Contraseña:</label>
             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
+          </div>
+
+          <div id="passwordError" class="error-message" style="display: none;">
+            Las contraseñas no coinciden.
           </div>
 
           <button type="submit" class="btn btn-custom btn-block">Actualizar</button>
@@ -105,9 +107,20 @@
     </div>
   </div>
 
- 
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dist/js/adminlte.min.js?v=3.2.0"></script>
+  
+  <script>
+    document.getElementById('resetPasswordForm').addEventListener('submit', function(event) {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('password_confirmation').value;
+      const errorDiv = document.getElementById('passwordError');
+
+      if (password !== confirmPassword) {
+        event.preventDefault(); 
+        errorDiv.style.display = 'block'; 
+      } else {
+        errorDiv.style.display = 'none'; 
+      }
+    });
+  </script>
 </body>
 </html>

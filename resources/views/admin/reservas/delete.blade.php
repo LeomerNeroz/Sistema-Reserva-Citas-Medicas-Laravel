@@ -36,7 +36,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="consultorio">Consultorio</label>
-                <p>{{ $reserva->consultorio?->nombre . ' - Capacidad: ' . $reserva->consultorio?->capacidad }}</p>
+                <p>{{ $reserva->consultorio?->nombre . ' - Especialidad: ' . $reserva->consultorio->especialidad }}</p>
               </div>
             </div>
           </div>

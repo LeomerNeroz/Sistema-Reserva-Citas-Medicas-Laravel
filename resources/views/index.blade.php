@@ -150,7 +150,7 @@
                   </div>
                   <div class="col-md-4">
                     <div style="float: right">
-                      <label for="">Consultorios</label>
+                      <label for="consultorio_select">Consultorios</label>
                     </div>  
                   </div>
                   <div class="col-md-4">

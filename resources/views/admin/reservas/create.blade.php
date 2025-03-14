@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+
 @section('content')
 <div class="row">
   <h1>Registro De Una Nueva Reserva</h1>
@@ -14,7 +15,7 @@
         <div class="col-md-3">
           <form action="{{ route('admin.reservas.store') }}" method="POST">
             @csrf
-           
+
             <div class="form-group">
               <label for="paciente_id">Paciente</label> <b>*</b>
               <select name="paciente_id" id="paciente_id" class="form-control" required>
@@ -35,43 +36,37 @@
               </select>
             </div>
 
-          
             <div class="form-group">
-              <label for="consultorio_id">Consultorio</label> <b>*</b>
+              <label for="consultorio_select">Consultorio</label> <b>*</b>
               <select name="consultorio_id" id="consultorio_select" class="form-control" required>
                 <option value="">Seleccionar Consultorio</option>
                 @foreach ($consultorios as $consultorio)
-                <option value="{{ $consultorio->id }}">{{ $consultorio->nombre . ' - Capacidad: ' . $consultorio->capacidad }}</option>
+                <option value="{{ $consultorio->id }}">{{ $consultorio->nombre . ' - Especialidad: ' . $consultorio->especialidad }}</option>
                 @endforeach
               </select>
             </div>
 
-            
             <div class="form-group">
               <label for="fecha">Fecha</label> <b>*</b>
-              <input type="date" name="fecha" class="form-control" required>
+              <input type="date" id="fecha" name="fecha" class="form-control" required>
             </div>
 
-           
             <div class="form-group">
               <label for="hora_inicio">Hora Inicio</label> <b>*</b>
-              <input type="time" name="hora_inicio" class="form-control" required>
+              <input type="time" id="hora_inicio" name="hora_inicio" class="form-control" required>
             </div>
 
-            
             <div class="form-group">
               <label for="hora_fin">Hora Fin</label> <b>*</b>
-              <input type="time" name="hora_fin" class="form-control" required>
+              <input type="time" id="hora_fin" name="hora_fin" class="form-control" required>
             </div>
 
-           
             <div class="form-group">
               <label for="title_preview">Título de la cita</label> <b>*</b>
               <input type="text" id="title_preview" class="form-control" readonly placeholder="Título de la cita">
               <input type="hidden" name="title" id="title" value="">
             </div>
 
-           
             <div class="form-group">
               <a href="{{ route('admin.reservas.index') }}" class="btn btn-secondary">Cancelar</a>
               <button type="submit" class="btn btn-primary">Registrar Reserva</button>
@@ -114,21 +109,18 @@
       calendar.render();
     }
 
-    
     let paciente = '';
     let doctor = '';
     let consultorio = '';
     let horaInicio = '';
     let horaFin = '';
 
-    
     function updateTitle() {
       const title = `${paciente} - ${doctor} - ${consultorio} (${horaInicio} a ${horaFin})`;
       document.getElementById('title_preview').value = title;
       document.getElementById('title').value = title;
     }
 
-   
     document.querySelector('select[name="paciente_id"]')?.addEventListener('change', function () {
       const selectedOption = this.options[this.selectedIndex];
       paciente = selectedOption.text.split(' - ')[0].trim();

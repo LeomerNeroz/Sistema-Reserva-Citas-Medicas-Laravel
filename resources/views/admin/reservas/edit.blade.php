@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+
 @section('content')
 <div class="row">
   <h1>Editar Reserva</h1>
@@ -17,7 +18,6 @@
           @method('PUT')
 
           <div class="row">
-           
             <div class="col-md-4">
               <div class="form-group">
                 <label for="paciente_id">Paciente</label> <b>*</b>
@@ -32,7 +32,6 @@
               </div>
             </div>
 
-           
             <div class="col-md-4">
               <div class="form-group">
                 <label for="doctor_id">Doctor</label> <b>*</b>
@@ -47,7 +46,6 @@
               </div>
             </div>
 
-            
             <div class="col-md-4">
               <div class="form-group">
                 <label for="consultorio_id">Consultorio</label> <b>*</b>
@@ -55,7 +53,7 @@
                   <option value="">Seleccionar Consultorio</option>
                   @foreach ($consultorios as $consultorio)
                   <option value="{{ $consultorio->id }}" {{ $reserva->consultorio_id == $consultorio->id ? 'selected' : '' }}>
-                    {{ $consultorio->nombre . ' - Capacidad: ' . $consultorio->capacidad }}
+                    {{ $consultorio->nombre . ' - Especialidad: ' . $consultorio->especialidad }}
                   </option>
                   @endforeach
                 </select>
@@ -64,27 +62,24 @@
           </div>
 
           <div class="row">
-         
             <div class="col-md-4">
               <div class="form-group">
                 <label for="fecha">Fecha</label> <b>*</b>
-                <input type="date" name="fecha" class="form-control" value="{{ $reserva->fecha }}" required>
+                <input type="date" id="fecha" name="fecha" class="form-control" value="{{ $reserva->fecha }}" required>
               </div>
             </div>
 
-           
             <div class="col-md-4">
               <div class="form-group">
                 <label for="hora_inicio">Hora Inicio</label> <b>*</b>
-                <input type="time" name="hora_inicio" class="form-control" value="{{ $reserva->hora_inicio }}" required>
+                <input type="time" id="hora_inicio" name="hora_inicio" class="form-control" value="{{ $reserva->hora_inicio }}" required>
               </div>
             </div>
 
-         
             <div class="col-md-4">
               <div class="form-group">
                 <label for="hora_fin">Hora Fin</label> <b>*</b>
-                <input type="time" name="hora_fin" class="form-control" value="{{ $reserva->hora_fin }}" required>
+                <input type="time" id="hora_fin" name="hora_fin" class="form-control" value="{{ $reserva->hora_fin }}" required>
               </div>
             </div>
           </div>

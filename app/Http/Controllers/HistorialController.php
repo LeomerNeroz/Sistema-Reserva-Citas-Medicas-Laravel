@@ -142,13 +142,18 @@ class HistorialController extends Controller
     }
 
 
+
     public function buscar_paciente(Request $request)
 {
     $ci = $request->ci;
-    $paciente = Paciente::where('ci' , $ci)->first();
-    return view('admin.historial.buscar_paciente', compact('paciente'));
-}
+    $paciente = null;
+    $pacientesSinCedula = Paciente::whereNull('ci')->get(); 
 
+    if (!empty($ci)) {
+        $paciente = Paciente::where('ci', $ci)->first();
+    }
+    return view('admin.historial.buscar_paciente', compact('paciente', 'pacientesSinCedula'));
+}
 public function imprimir_historial($id)
 {
    
@@ -249,6 +254,12 @@ class MYPDF extends TCPDF {
         
         $this->Cell(0, 10, 'Impreso por: ' . Auth::user()->email . ' | Fecha: ' . \Carbon\Carbon::now()->format('d/m/Y'), 0, false, 'R', 0, '', 0, false, 'T', 'M');
     }
+
+
+
+    
+
+
 
 
 

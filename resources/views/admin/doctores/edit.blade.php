@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+
 @section('content')
 <div class="row">
   <h1>Doctor: {{$doctor->nombres . " " . $doctor->apellidos}}</h1>
@@ -21,7 +22,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="nombres">Nombres</label> <b>*</b>
-                            <input type="text" value="{{ $doctor->nombres }}" name="nombres" class="form-control" required>
+                            <input type="text" id="nombres" value="{{ $doctor->nombres }}" name="nombres" class="form-control" required>
                             @error('nombres')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
@@ -30,7 +31,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="apellidos">Apellidos</label> <b>*</b>
-                            <input type="text" value="{{ $doctor->apellidos }}" name="apellidos" class="form-control" required>
+                            <input type="text" id="apellidos" value="{{ $doctor->apellidos }}" name="apellidos" class="form-control" required>
                             @error('apellidos')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
@@ -39,7 +40,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="telefono">Teléfono</label> <b>*</b>
-                            <input type="number" value="{{ $doctor->telefono }}" name="telefono" class="form-control" required>
+                            <input type="number" id="telefono" value="{{ $doctor->telefono }}" name="telefono" class="form-control" required>
                             @error('telefono')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
@@ -48,7 +49,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="email">Correo</label> <b>*</b>
-                            <input type="email" value="{{ $doctor->email }}" name="email" class="form-control" required>
+                            <input type="email" id="email" value="{{ $doctor->email }}" name="email" class="form-control" required>
                             @error('email')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
@@ -60,7 +61,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="especialidad">Especialidad</label> <b>*</b>
-                            <input type="text" value="{{ $doctor->especialidad }}" name="especialidad" class="form-control" required>
+                            <input type="text" id="especialidad" value="{{ $doctor->especialidad }}" name="especialidad" class="form-control" required>
                             @error('especialidad')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror

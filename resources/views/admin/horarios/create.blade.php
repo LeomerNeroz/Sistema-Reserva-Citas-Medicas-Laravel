@@ -1,4 +1,5 @@
-@extends ('layouts.admin')
+@extends('layouts.admin')
+
 @section('content')
 <div class="row">
   <h1>Registro De Un Nuevo Horario</h1>
@@ -14,16 +15,14 @@
       </div>
       <div class="card-body row">
         <div class="col-md-3">
-          <form action="{{url ('/admin/horarios/create')}}" method="POST">
+          <form action="{{ url('/admin/horarios/create') }}" method="POST">
             @csrf
-
-
 
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Paciente</label> <b>*</b>
-                  <select name="paciente_id" id="" class="form-control">
+                  <label for="paciente_id">Paciente</label> <b>*</b>
+                  <select name="paciente_id" id="paciente_id" class="form-control">
                     <option value="">Seleccionar Paciente</option>
                     @foreach ($pacientes as $paciente)
                     <option value="{{$paciente->id}}">{{$paciente->nombres." ".$paciente->apellidos." - ".$paciente->ci}}</option>
@@ -33,20 +32,16 @@
               </div>
             </div>
 
-
-
-
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Consultorios</label> <b>*</b>
+                  <label for="consultorio_select">Consultorios</label> <b>*</b>
                   <select name="consultorio_id" id="consultorio_select" class="form-control">
                     <option value="">Seleccionar Consultorio</option>
                     @foreach ($consultorios as $consultorio)
-                    <option value="{{$consultorio->id}}">{{$consultorio->nombre." -Capacidad: ".$consultorio->capacidad}}</option>
+                    <option value="{{$consultorio->id}}">{{$consultorio->nombre." -Especialidad: ".$consultorio->especialidad}}</option>
                     @endforeach
                   </select>
-
 
                   <script>
                     $('#consultorio_select').on('change', function(){
@@ -69,8 +64,6 @@
                       }
                     });
                   </script>
-
-
                 </div>
               </div>
             </div>
@@ -78,8 +71,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Doctores</label> <b>*</b>
-                  <select name="doctor_id" id="" class="form-control">
+                  <label for="doctor_id">Doctores</label> <b>*</b>
+                  <select name="doctor_id" id="doctor_id" class="form-control">
                     <option value="">Seleccionar Doctor</option>
                     @foreach ($doctores as $doctore)
                     <option value="{{$doctore->id}}">{{$doctore->nombres." ".$doctore->apellidos." - ".$doctore->especialidad}}</option>
@@ -92,8 +85,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Dia</label> <b>*</b>
-                  <select name="dia" id="" class="form-control">
+                  <label for="dia">Dia</label> <b>*</b>
+                  <select name="dia" id="dia" class="form-control">
                     <option value="LUNES">LUNES</option>
                     <option value="MARTES">MARTES</option>
                     <option value="MIERCOLES">MIERCOLES</option>
@@ -109,18 +102,17 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Fecha</label> <b>*</b>
-                  <input type="date" name="fecha" class="form-control" required>
+                  <label for="fecha">Fecha</label> <b>*</b>
+                  <input type="date" id="fecha" name="fecha" class="form-control" required>
                 </div>
               </div>
             </div>
             
-            
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Hora Inicio</label> <b>*</b>
-                  <input type="time" value="{{old('hora_inicio')}}" name="hora_inicio" class="form-control" required>
+                  <label for="hora_inicio">Hora Inicio</label> <b>*</b>
+                  <input type="time" id="hora_inicio" value="{{old('hora_inicio')}}" name="hora_inicio" class="form-control" required>
                   @error('hora_inicio')
                   <small style="color: red">{{$message}}</small>
                   @enderror
@@ -131,8 +123,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="">Hora Fin</label> <b>*</b>
-                  <input type="time" value="{{old('hora_fin')}}" name="hora_fin" class="form-control" required>
+                  <label for="hora_fin">Hora Fin</label> <b>*</b>
+                  <input type="time" id="hora_fin" value="{{old('hora_fin')}}" name="hora_fin" class="form-control" required>
                   @error('hora_fin')
                   <small style="color: red">{{$message}}</small>
                   @enderror
@@ -140,16 +132,11 @@
               </div>
             </div>
 
-
-            
-        
-
-
             <br>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <a href="{{ url('admin/horarios')}}" class="btn btn-secondary">Cancelar</a>
+                  <a href="{{ url('admin/horarios') }}" class="btn btn-secondary">Cancelar</a>
                   <button type="submit" class="btn btn-primary">Registrar Horario</button>
                 </div>
               </div>
@@ -157,31 +144,22 @@
           </form>
         </div>
         <div class="col-md-9">
-          <div id="consultorio_info">
-           
-
-          </div>
+          <div id="consultorio_info"></div>
         </div>
       </div>
     </div>
-
-
 
     <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header">{{ __('Calendario') }}</div>
-  
                   <div class="card-body">
                       <div id='calendar'></div>
                   </div>
               </div>
           </div>
       </div>
-  </div>
-
-
   </div>
 </div>
 @endsection
@@ -216,5 +194,4 @@
     calendar.render();
   });
 </script>
-
 @endpush

@@ -26,7 +26,7 @@
                   <option value="">Seleccionar Consultorio</option>
                   @foreach ($consultorios as $consultorio)
                     <option value="{{$consultorio->id}}" {{ $horario->consultorio_id == $consultorio->id ? 'selected' : '' }}>
-                      {{$consultorio->nombre." -Capacidad: ".$consultorio->capacidad}}
+                      {{$consultorio->nombre." -Especialidad: ".$consultorio->especialidad}}
                     </option>
                   @endforeach
                 </select>

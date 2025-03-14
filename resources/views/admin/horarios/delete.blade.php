@@ -20,7 +20,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="consultorio">Consultorio</label>
-                            <p>{{ $horario->consultorio->nombre }} - Capacidad: {{ $horario->consultorio->capacidad }}</p>
+                            <p>{{ $horario->consultorio->nombre }} - Especialidad: {{ $horario->consultorio->especialidad }}</p>
                         </div>
                     </div>
                     <div class="col-md-4">

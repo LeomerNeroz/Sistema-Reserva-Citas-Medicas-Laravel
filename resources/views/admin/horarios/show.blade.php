@@ -46,7 +46,7 @@
                     <div class="col-md-4">
                         <div class="form group">
                             <label for="">Consultorios</label> 
-                            <p>{{$horario->consultorio->nombre. " - ".$horario->consultorio->capacidad}}</p>
+                            <p>{{$horario->consultorio->nombre. " - ".$horario->consultorio->especialidad}}</p>
                         </div>
                     </div>
                 </div>

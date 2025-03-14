@@ -35,9 +35,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js'></script>
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/es.js"></script> 
 
 
 
@@ -118,12 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{url ('admin/usuarios/create')}}" class="nav-link active">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Creación De Usuarios</p>
-                    </a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a href="{{url ('admin/usuarios')}}" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>

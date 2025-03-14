@@ -111,7 +111,7 @@ class PacienteController extends Controller
     $request->validate([
         'nombres' => 'required',
         'apellidos' => 'required',
-        'ci' => 'unique:pacientes,ci,'.$paciente->id,
+        'ci' => ['nullable', Rule::unique('pacientes')],
         'fecha_nacimiento' => 'required',
         'genero' => 'required',
         'celular' => 'required',

@@ -1,4 +1,5 @@
-@extends ('layouts.admin')
+@extends('layouts.admin')
+
 @section('content')
 
 <div class="row">
@@ -14,7 +15,7 @@
             <h3 class="card-title">Llene los datos</h3>
         </div>
         <div class="card-body">
-            <form action="{{url('/admin/historial' ,$historial->id)}}" method="POST">
+            <form action="{{ url('/admin/historial', $historial->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -31,7 +32,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="fecha_visita">Fecha De La Cita Medica</label>
-                            <input type="date" name="fecha_visita" value="{{$historial->fecha_visita}}" class="form-control">
+                            <input type="date" id="fecha_visita" name="fecha_visita" value="{{$historial->fecha_visita}}" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -43,7 +44,6 @@
                         </div>
                     </div>
                     
-
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="doctor_id">Doctor</label>
@@ -54,13 +54,11 @@
                             </select>
                         </div>
                     </div>
-      
-                    
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <a href="{{ url('admin/historial')}}" class="btn btn-secondary">Cancelar</a>
+                            <a href="{{ url('admin/historial') }}" class="btn btn-secondary">Cancelar</a>
                             <button type="submit" class="btn btn-success">Actualizar</button>
                         </div>
                     </div>
