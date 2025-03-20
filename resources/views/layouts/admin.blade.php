@@ -142,12 +142,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{url ('admin/secretarias/create')}}" class="nav-link active">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Creación De Secretarias</p>
-                    </a>
-                  </li>
+                  
                   <li class="nav-item">
                     <a href="{{url ('admin/secretarias')}}" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>
@@ -419,12 +414,38 @@ timer: 4500
   
   
   <aside class="control-sidebar control-sidebar-dark">
-    
     <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
+      <h5>Manual de Usuario del Sistema</h5>
+      <p>
+        <button onclick="downloadFile('{{ asset('assets/img/manual/manual-de-usuario.pdf') }}')" 
+                class="btn btn-primary" 
+                style="padding: 10px 20px; font-size: 16px;">
+          Descargar Manual de Usuario
+        </button>
+      </p>
+  
+      <h5>Manual De Sistema</h5>
+      <p>
+        <button onclick="downloadFile('{{ asset('assets/img/manual/manual-de-sistema.pdf') }}')" 
+                class="btn btn-primary" 
+                style="padding: 10px 20px; font-size: 16px;">
+          Descargar Manual de Sistema
+        </button>
+      </p>
     </div>
   </aside>
+  
+  <script>
+    function downloadFile(filePath) {
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.target = '_blank';
+      link.download = filePath.split('/').pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
  
 
  

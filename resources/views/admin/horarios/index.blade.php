@@ -24,7 +24,6 @@
                     <thead style="background-color: #c0c0c0">
                         <tr>
                             <td style="text-align: center"><b>Nro</b></td>
-                            <td style="text-align: center"><b>Paciente</b></td>
                             <td style="text-align: center"><b>Doctor</b></td>
                             <td style="text-align: center"><b>Especialidad</b></td>
                             <td style="text-align: center"><b>Consultorio</b></td>
@@ -40,7 +39,6 @@
                         @foreach ($horarios as $horario)
                         <tr>
                             <td style="text-align: center">{{ $contador++ }}</td>
-                            <td>{{ $horario->paciente->nombres ." ".$horario->paciente->apellidos}}</td>
                             <td>{{ $horario->doctor->nombres ." ".$horario->doctor->apellidos}}</td>
                             <td>{{ $horario->doctor->especialidad }}</td>
                             <td>{{ $horario->consultorio->nombre . " Especialidad: " . $horario->consultorio->especialidad}}</td>

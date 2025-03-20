@@ -11,15 +11,15 @@ class EventSeeder extends Seeder
     {
         Event::create([
             'title' => 'Cita #1',
-            'start' => '2024-01-16 08:00:00',
-            'end' => '2024-01-16 11:00:00',
+            'start' => '2025-03-16 08:00:00',
+            'end' => '2025-03-16 11:00:00',
             'all_day' => false,
         ]);
 
         Event::create([
             'title' => 'Cita #2',
-            'start' => '2024-01-17 14:00:00',
-            'end' => '2024-01-17 15:00:00',
+            'start' => '2025-03-17 14:00:00',
+            'end' => '2025-03-17 15:00:00',
             'all_day' => false,
         ]);
     }

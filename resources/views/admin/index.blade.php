@@ -96,6 +96,41 @@
       </div>
     </div>
   @endcan
+
+
+  @can('admin.reservas.index')
+  <div class="col-lg-3 col-6">
+    <div class="small-box bg-teal">
+      <div class="inner">
+        <h3>{{ $total_reservas }}</h3>
+        <p>Reservas</p>
+      </div>
+      <div class="icon">
+        <i class="fas bi bi-building-add"></i>
+      </div>
+      <a href="{{ url('admin/reservas') }}" class="small-box-footer">Mas Información <i class="fas bi bi-building-add"></i></a>
+    </div>
+  </div>
+@endcan
+
+
+@can('admin.historial.index')
+<div class="col-lg-3 col-6">
+  <div class="small-box bg-maroon">
+    <div class="inner">
+      <h3>{{ $total_historiales }}</h3>
+      <p>Historial Clinico</p>
+    </div>
+    <div class="icon">
+      <i class="fas bi bi-file-earmark-medical"></i>
+    </div>
+    <a href="{{ url('admin/historial') }}" class="small-box-footer">Mas Información <i class="fas bi bi-file-earmark-medical"></i></a>
+  </div>
+</div>
+@endcan
+
+
+
 </div>
 
 <div class="row">

@@ -19,7 +19,6 @@ class CreateHorariosTable extends Migration
             $table->string('fecha');
             $table->time('hora_inicio');
             $table->string('hora_fin');
-            $table->foreignId('paciente_id')->constrained('pacientes')->onDelete('cascade');
             $table->foreignId('doctor_id')->constrained('doctors')->onDelete('cascade');
             $table->foreignId('consultorio_id')->constrained('consultorios')->onDelete('cascade');
             $table->timestamps();

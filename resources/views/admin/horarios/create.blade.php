@@ -21,13 +21,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="paciente_id">Paciente</label> <b>*</b>
-                  <select name="paciente_id" id="paciente_id" class="form-control">
-                    <option value="">Seleccionar Paciente</option>
-                    @foreach ($pacientes as $paciente)
-                    <option value="{{$paciente->id}}">{{$paciente->nombres." ".$paciente->apellidos." - ".$paciente->ci}}</option>
-                    @endforeach
-                  </select>
+                  
                 </div>
               </div>
             </div>

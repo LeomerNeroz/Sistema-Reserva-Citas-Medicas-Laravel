@@ -35,20 +35,15 @@ class DatabaseSeeder extends Seeder
 
         
         Secretaria::create([
-            'nombres' => 'Secretaria',
-            'apellidos' => '1',
-            'ci' => '11111111',
-            'celular' => '778787788',
-            'fecha_nacimiento' => '2000-10-10',
-            'direccion' => 'zona por aquí y luego más allá',
+            
             'user_id' => $userSecretaria->id,
         ]);
 
         Doctor::create([
 
 
-            'nombres' => 'Doctor1',
-            'apellidos' => 'house',
+            'nombres' => 'Fernando',
+            'apellidos' => 'Molina',
             'telefono' => '+584127044823',
             'email' => 'doctore@ejemplo.com',
             'especialidad' => 'fisioterapia',
@@ -58,8 +53,8 @@ class DatabaseSeeder extends Seeder
 
         Consultorio::create([
 
-        'nombre' => 'el mas grande',
-        'capacidad' => '10',
+        'nombre' => '1',
+        'capacidad' => '8 horas',
         'especialidad' => 'fisioterapia',
         'estado' => 'ACTIVO',
 

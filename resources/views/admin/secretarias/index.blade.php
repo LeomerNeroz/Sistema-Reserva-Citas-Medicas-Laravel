@@ -10,12 +10,8 @@
     <div class="col-md-12">
         <div class="card card-outline card-primary">
             <div class="card-header">
-                <h3 class="card-title">Secretarias registrados</h3>
-                <div class="card-tools">
-                    <a href="{{url ('admin/secretarias/create')}}" class="btn btn-primary">
-                       Registrar Nuevo
-                    </a>
-                </div>
+                <h3 class="card-title">Secretarias registradas</h3>
+                
 </div>
 <hr>
 <div class="card-body">
@@ -23,35 +19,18 @@
 <thead style="background-color: #c0c0c0">
 <tr>
 <td style="text-align: center"><b>Nro</b></td>
-<td style="text-align: center"><b>Nombres</b></td>
-<td style="text-align: center"><b>Apellidos</b></td>
-<td style="text-align: center"><b>CI</b></td>
-<td style="text-align: center"><b>Celular</b></td>
-<td style="text-align: center"><b>Fecha De Nacimiento</b></td>
-<td style="text-align: center"><b>Dirección</b></td>
+<td style="text-align: center"><b>Nombre</b></td>
 <td style="text-align: center"><b>Email</b></td>
-<td style="text-align: center"><b>Acciones</b></td>
 </tr>
 </thead>
 <tbody>
 <?php $contador = 1; ?>
-@foreach ($secretarias as $secretaria)
+@foreach ($secretarias as $usuario)
 <tr>
 <td style="text-align: center">{{ $contador++ }}</td>
-<td>{{ $secretaria->nombres }}</td>
-<td>{{ $secretaria->apellidos }}</td>
-<td>{{ $secretaria->ci }}</td>
-<td>{{ $secretaria->celular }}</td>
-<td>{{ $secretaria->fecha_nacimiento }}</td>
-<td>{{ $secretaria->direccion }}</td>
-<td>{{ $secretaria->user->email }}</td>
-<td style="text-align: center">
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <a href="{{ url('admin/secretarias/' . $secretaria->id) }}" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-      <a href="{{ url('admin/secretarias/' . $secretaria->id . '/edit') }}" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
-      <a href="{{ url('admin/secretarias/' . $secretaria->id . '/confirm-delete')}}" type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
-      </div>
-</td>
+<td>{{ $usuario->name }}</td>
+<td>{{ $usuario->email }}</td>
+
 </tr>
 @endforeach
 </tbody>

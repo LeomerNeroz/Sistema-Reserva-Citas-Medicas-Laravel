@@ -51,9 +51,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function secretarias()
+    public function secretaria()
     {
-        return $this->hasMany(Secretaria::class);
+        return $this->hasOne(Secretaria::class);
     }
 
     public function securityQuestion1()
