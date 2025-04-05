@@ -22,7 +22,8 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="nombre">Nombre Del Consultorio</label> <b>*</b>
-                <input type="text" value="{{ $consultorio->nombre }}" name="nombre" id="nombre" class="form-control" required>
+                <input type="text" value="{{ $consultorio->nombre }}" name="nombre" id="nombre" class="form-control" placeholder="Ejemplo: Consultorio A" required>
+                <small class="text-muted">Ingrese el nombre del consultorio (máximo 50 caracteres).</small>
                 @error('nombre')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -31,7 +32,8 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="capacidad">Capacidad</label> <b>*</b>
-                <input type="text" value="{{ $consultorio->capacidad }}" name="capacidad" id="capacidad" class="form-control" required>
+                <input type="text" value="{{ $consultorio->capacidad }}" name="capacidad" id="capacidad" class="form-control" placeholder="Ejemplo: 10 personas" required>
+                <small class="text-muted">Ingrese la capacidad máxima del consultorio (Personas o Horas).</small>
                 @error('capacidad')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -39,8 +41,9 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <label for="telefono">Telefono</label>
-                <input type="number" value="{{ $consultorio->telefono }}" name="telefono" id="telefono" class="form-control">
+                <label for="telefono">Teléfono</label>
+                <input type="number" value="{{ $consultorio->telefono }}" name="telefono" id="telefono" class="form-control" placeholder="Ejemplo: 04127076999">
+                <small class="text-muted">Ingrese un número de teléfono de contacto (opcional).</small>
               </div>
             </div>
           </div>
@@ -51,7 +54,8 @@
             <div class="col-md-9">
               <div class="form-group">
                 <label for="especialidad">Especialidad</label> <b>*</b>
-                <input type="text" value="{{ $consultorio->especialidad }}" name="especialidad" id="especialidad" class="form-control" required>
+                <input type="text" value="{{ $consultorio->especialidad }}" name="especialidad" id="especialidad" class="form-control" placeholder="Ejemplo: Cardiología" required>
+                <small class="text-muted">Ingrese la especialidad principal del consultorio.</small>
                 @error('especialidad')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -69,6 +73,7 @@
                         <option value="ACTIVO">ACTIVO</option>
                     @endif
                 </select>
+                <small class="text-muted">Seleccione el estado actual del consultorio.</small>
               </div>
             </div>
           </div>

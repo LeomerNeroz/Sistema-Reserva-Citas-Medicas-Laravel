@@ -33,9 +33,10 @@
                   <select name="consultorio_id" id="consultorio_select" class="form-control">
                     <option value="">Seleccionar Consultorio</option>
                     @foreach ($consultorios as $consultorio)
-                    <option value="{{$consultorio->id}}">{{$consultorio->nombre." -Especialidad: ".$consultorio->especialidad}}</option>
+                      <option value="{{$consultorio->id}}">{{$consultorio->nombre." - Especialidad: ".$consultorio->especialidad}}</option>
                     @endforeach
                   </select>
+                  <small class="text-muted">Seleccione el consultorio asociado al horario.</small>
 
                   <script>
                     $('#consultorio_select').on('change', function(){
@@ -69,9 +70,10 @@
                   <select name="doctor_id" id="doctor_id" class="form-control">
                     <option value="">Seleccionar Doctor</option>
                     @foreach ($doctores as $doctore)
-                    <option value="{{$doctore->id}}">{{$doctore->nombres." ".$doctore->apellidos." - ".$doctore->especialidad}}</option>
+                      <option value="{{$doctore->id}}">{{$doctore->nombres." ".$doctore->apellidos." - ".$doctore->especialidad}}</option>
                     @endforeach
                   </select>
+                  <small class="text-muted">Seleccione el doctor asociado al horario.</small>
                 </div>
               </div>
             </div>
@@ -79,16 +81,17 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="dia">Dia</label> <b>*</b>
+                  <label for="dia">Día</label> <b>*</b>
                   <select name="dia" id="dia" class="form-control">
                     <option value="LUNES">LUNES</option>
                     <option value="MARTES">MARTES</option>
-                    <option value="MIERCOLES">MIERCOLES</option>
+                    <option value="MIERCOLES">MIÉRCOLES</option>
                     <option value="JUEVES">JUEVES</option>
                     <option value="VIERNES">VIERNES</option>
-                    <option value="SABADO">SABADO</option>
+                    <option value="SABADO">SÁBADO</option>
                     <option value="DOMINGO">DOMINGO</option>
                   </select>
+                  <small class="text-muted">Seleccione el día de la semana para el horario.</small>
                 </div>
               </div>
             </div>
@@ -98,6 +101,7 @@
                 <div class="form-group">
                   <label for="fecha">Fecha</label> <b>*</b>
                   <input type="date" id="fecha" name="fecha" class="form-control" required>
+                  <small class="text-muted">Ingrese la fecha específica para el horario.</small>
                 </div>
               </div>
             </div>
@@ -107,8 +111,9 @@
                 <div class="form-group">
                   <label for="hora_inicio">Hora Inicio</label> <b>*</b>
                   <input type="time" id="hora_inicio" value="{{old('hora_inicio')}}" name="hora_inicio" class="form-control" required>
+                  <small class="text-muted">Ingrese la hora de inicio del horario.</small>
                   @error('hora_inicio')
-                  <small style="color: red">{{$message}}</small>
+                    <small style="color: red">{{$message}}</small>
                   @enderror
                 </div>
               </div>
@@ -119,8 +124,9 @@
                 <div class="form-group">
                   <label for="hora_fin">Hora Fin</label> <b>*</b>
                   <input type="time" id="hora_fin" value="{{old('hora_fin')}}" name="hora_fin" class="form-control" required>
+                  <small class="text-muted">Ingrese la hora de finalización del horario.</small>
                   @error('hora_fin')
-                  <small style="color: red">{{$message}}</small>
+                    <small style="color: red">{{$message}}</small>
                   @enderror
                 </div>
               </div>
@@ -154,7 +160,9 @@
               </div>
           </div>
       </div>
+    </div>
   </div>
+  
 </div>
 @endsection
 

@@ -18,12 +18,13 @@
                     @csrf
                     @method('PUT')
 
-                
+                    <!-- Nombre del usuario -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="name">Nombre del usuario</label> <b>*</b>
-                                <input type="text" id="name" value="{{ $usuario->name }}" name="name" class="form-control" required>
+                                <input type="text" id="name" value="{{ $usuario->name }}" name="name" class="form-control" placeholder="Ejemplo: Juan Pérez" required>
+                                <small class="text-muted">Ingrese el nombre completo del usuario.</small>
                                 @error('name')
                                     <small style="color: red;">{{ $message }}</small>
                                 @enderror
@@ -31,13 +32,15 @@
                         </div>
                     </div>
 
-             
                     <br>
+
+                    <!-- Email -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email">Email</label> <b>*</b>
-                                <input type="email" id="email" value="{{ $usuario->email }}" name="email" class="form-control" required>
+                                <input type="email" id="email" value="{{ $usuario->email }}" name="email" class="form-control" placeholder="Ejemplo: juan.perez@example.com" required>
+                                <small class="text-muted">Ingrese un correo electrónico válido.</small>
                                 @error('email')
                                     <small style="color: red;">{{ $message }}</small>
                                 @enderror
@@ -45,13 +48,15 @@
                         </div>
                     </div>
 
-                  
                     <br>
+
+                    <!-- Contraseña -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="password">Contraseña</label>
-                                <input type="password" id="password" value="{{ old('password') }}" name="password" class="form-control">
+                                <input type="password" id="password" value="{{ old('password') }}" name="password" class="form-control" placeholder="Deje en blanco si no desea cambiarla">
+                                <small class="text-muted">Ingrese una nueva contraseña (opcional).</small>
                                 @error('password')
                                     <small style="color: red;">{{ $message }}</small>
                                 @enderror
@@ -59,13 +64,15 @@
                         </div>
                     </div>
 
-                   
                     <br>
+
+                    <!-- Confirmar Contraseña -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="password_confirmation">Confirme Contraseña</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Repita la nueva contraseña">
+                                <small class="text-muted">Confirme la nueva contraseña (si se cambió).</small>
                                 @error('password_confirmation')
                                     <small style="color: red;">{{ $message }}</small>
                                 @enderror
@@ -73,8 +80,9 @@
                         </div>
                     </div>
 
-                   
                     <br>
+
+                    <!-- Asignar Rol -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -84,13 +92,14 @@
                                     <option value="secretaria" {{ $usuario->rol === 'secretaria' ? 'selected' : '' }}>Secretaria</option>
                                     <option value="admin" {{ $usuario->rol === 'admin' ? 'selected' : '' }}>Admin</option>
                                 </select>
+                                <small class="text-muted">Seleccione el rol que tendrá el usuario en el sistema.</small>
                             </div>
                         </div>
                     </div>
 
                     <hr>
 
-                  
+                    <!-- Botones de Acción -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">

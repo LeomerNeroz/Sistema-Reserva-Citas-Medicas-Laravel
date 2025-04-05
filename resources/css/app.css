@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    :focus {
+        @apply outline-none ring-4 ring-offset-4 ring-blue-500 shadow-lg shadow-blue-500/50;
+    }
+}

@@ -19,52 +19,59 @@
             <div class="form-group">
               <label for="paciente_id">Paciente</label> <b>*</b>
               <select name="paciente_id" id="paciente_id" class="form-control" required>
-                <option value="">Seleccionar Paciente</option>
+                <option value="" selected disabled>Seleccionar Paciente</option>
                 @foreach ($pacientes as $paciente)
-                <option value="{{ $paciente->id }}">{{ $paciente->nombres . ' ' . $paciente->apellidos . ' - CI: ' . $paciente->ci }}</option>
+                  <option value="{{ $paciente->id }}">{{ $paciente->nombres . ' ' . $paciente->apellidos . ' - CI: ' . $paciente->ci }}</option>
                 @endforeach
               </select>
+              <small class="text-muted">Seleccione el paciente asociado a la reserva.</small>
             </div>
 
             <div class="form-group">
               <label for="doctor_id">Doctor</label> <b>*</b>
               <select name="doctor_id" id="doctor_id" class="form-control" required>
-                <option value="">Seleccionar Doctor</option>
+                <option value="" selected disabled>Seleccionar Doctor</option>
                 @foreach ($doctores as $doctor)
-                <option value="{{ $doctor->id }}">{{ $doctor->nombres . ' ' . $doctor->apellidos . ' - Especialidad: ' . $doctor->especialidad }}</option>
+                  <option value="{{ $doctor->id }}">{{ $doctor->nombres . ' ' . $doctor->apellidos . ' - Especialidad: ' . $doctor->especialidad }}</option>
                 @endforeach
               </select>
+              <small class="text-muted">Seleccione el doctor asociado a la reserva.</small>
             </div>
 
             <div class="form-group">
               <label for="consultorio_select">Consultorio</label> <b>*</b>
               <select name="consultorio_id" id="consultorio_select" class="form-control" required>
-                <option value="">Seleccionar Consultorio</option>
+                <option value="" selected disabled>Seleccionar Consultorio</option>
                 @foreach ($consultorios as $consultorio)
-                <option value="{{ $consultorio->id }}">{{ $consultorio->nombre . ' - Especialidad: ' . $consultorio->especialidad }}</option>
+                  <option value="{{ $consultorio->id }}">{{ $consultorio->nombre . ' - Especialidad: ' . $consultorio->especialidad }}</option>
                 @endforeach
               </select>
+              <small class="text-muted">Seleccione el consultorio donde se realizará la cita.</small>
             </div>
 
             <div class="form-group">
               <label for="fecha">Fecha</label> <b>*</b>
               <input type="date" id="fecha" name="fecha" class="form-control" required>
+              <small class="text-muted">Ingrese la fecha de la cita.</small>
             </div>
 
             <div class="form-group">
               <label for="hora_inicio">Hora Inicio</label> <b>*</b>
-              <input type="time" id="hora_inicio" name="hora_inicio" class="form-control" required>
+              <input type="time" id="hora_inicio" name="hora_inicio" class="form-control" placeholder="Ejemplo: 08:00 AM" required>
+              <small class="text-muted">Ingrese la hora de inicio de la cita.</small>
             </div>
 
             <div class="form-group">
               <label for="hora_fin">Hora Fin</label> <b>*</b>
-              <input type="time" id="hora_fin" name="hora_fin" class="form-control" required>
+              <input type="time" id="hora_fin" name="hora_fin" class="form-control" placeholder="Ejemplo: 09:00 AM" required>
+              <small class="text-muted">Ingrese la hora de finalización de la cita.</small>
             </div>
 
             <div class="form-group">
               <label for="title_preview">Título de la cita</label> <b>*</b>
               <input type="text" id="title_preview" class="form-control" readonly placeholder="Título de la cita">
               <input type="hidden" name="title" id="title" value="">
+              <small class="text-muted">Este campo se genera automáticamente al seleccionar los datos anteriores.</small>
             </div>
 
             <div class="form-group">

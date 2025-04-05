@@ -26,10 +26,11 @@
                   <option value="">Seleccionar Consultorio</option>
                   @foreach ($consultorios as $consultorio)
                     <option value="{{$consultorio->id}}" {{ $horario->consultorio_id == $consultorio->id ? 'selected' : '' }}>
-                      {{$consultorio->nombre." -Especialidad: ".$consultorio->especialidad}}
+                      {{$consultorio->nombre." - Especialidad: ".$consultorio->especialidad}}
                     </option>
                   @endforeach
                 </select>
+                <small class="text-muted">Seleccione el consultorio asociado al horario.</small>
                 @error('consultorio_id')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -47,6 +48,7 @@
                     </option>
                   @endforeach
                 </select>
+                <small class="text-muted">Seleccione el doctor asociado al horario.</small>
                 @error('doctor_id')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -65,6 +67,7 @@
                   <option value="SABADO" {{ $horario->dia == 'SABADO' ? 'selected' : '' }}>SABADO</option>
                   <option value="DOMINGO" {{ $horario->dia == 'DOMINGO' ? 'selected' : '' }}>DOMINGO</option>
                 </select>
+                <small class="text-muted">Seleccione el día de la semana para el horario.</small>
                 @error('dia')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -79,6 +82,7 @@
               <div class="form-group">
                 <label for="hora_inicio">Hora Inicio</label> <b>*</b>
                 <input type="time" value="{{ \Carbon\Carbon::parse($horario->hora_inicio)->format('H:i') }}" name="hora_inicio" id="hora_inicio" class="form-control" required>
+                <small class="text-muted">Ingrese la hora de inicio del horario.</small>
                 @error('hora_inicio')
                   <small style="color: red">{{ $message }}</small>
                 @enderror
@@ -89,6 +93,7 @@
               <div class="form-group">
                 <label for="hora_fin">Hora Fin</label> <b>*</b>
                 <input type="time" value="{{ \Carbon\Carbon::parse($horario->hora_fin)->format('H:i') }}" name="hora_fin" id="hora_fin" class="form-control" required>
+                <small class="text-muted">Ingrese la hora de finalización del horario.</small>
                 @error('hora_fin')
                   <small style="color: red">{{ $message }}</small>
                 @enderror

@@ -83,7 +83,7 @@
 
           <div class="form-group">
             <label for="password" class="col-form-label">Nueva Contraseña:</label>
-            <input type="password" name="password" id="password" class="form-control" required>
+            <input type="password" name="password" id="password" class="form-control" required minlength="8">
           </div>
 
           <div class="form-group">
@@ -91,8 +91,12 @@
             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
           </div>
 
+          <!-- Mensajes de error -->
           <div id="passwordError" class="error-message" style="display: none;">
             Las contraseñas no coinciden.
+          </div>
+          <div id="lengthError" class="error-message" style="display: none;">
+            La contraseña debe tener al menos 8 caracteres.
           </div>
 
           <button type="submit" class="btn btn-custom btn-block">Actualizar</button>
@@ -107,18 +111,45 @@
     </div>
   </div>
 
-  
   <script>
     document.getElementById('resetPasswordForm').addEventListener('submit', function(event) {
       const password = document.getElementById('password').value;
       const confirmPassword = document.getElementById('password_confirmation').value;
-      const errorDiv = document.getElementById('passwordError');
+      const passwordError = document.getElementById('passwordError');
+      const lengthError = document.getElementById('lengthError');
 
-      if (password !== confirmPassword) {
-        event.preventDefault(); 
-        errorDiv.style.display = 'block'; 
+      // Validar longitud mínima de la contraseña
+      if (password.length < 8) {
+        event.preventDefault(); // Evitar envío del formulario
+        lengthError.style.display = 'block'; // Mostrar mensaje de longitud
       } else {
-        errorDiv.style.display = 'none'; 
+        lengthError.style.display = 'none'; // Ocultar mensaje si es válido
+      }
+
+      // Validar coincidencia de contraseñas
+      if (password !== confirmPassword) {
+        event.preventDefault(); // Evitar envío del formulario
+        passwordError.style.display = 'block'; // Mostrar mensaje de coincidencia
+      } else {
+        passwordError.style.display = 'none'; // Ocultar mensaje si coinciden
+      }
+    });
+
+    // Limpiar mensajes de error cuando el usuario escriba
+    document.getElementById('password').addEventListener('input', function() {
+      const lengthError = document.getElementById('lengthError');
+      if (this.value.length >= 8) {
+        lengthError.style.display = 'none'; // Ocultar mensaje si la longitud es válida
+      }
+    });
+
+    document.getElementById('password_confirmation').addEventListener('input', function() {
+      const passwordError = document.getElementById('passwordError');
+      const password = document.getElementById('password').value;
+      const confirmPassword = this.value;
+
+      if (password === confirmPassword) {
+        passwordError.style.display = 'none'; // Ocultar mensaje si coinciden
       }
     });
   </script>
