@@ -39,36 +39,6 @@ class DatabaseSeeder extends Seeder
             'user_id' => $userSecretaria->id,
         ]);
 
-        Doctor::create([
-
-
-            'nombres' => 'Fernando',
-            'apellidos' => 'Molina',
-            'telefono' => '+584127044823',
-            'email' => 'doctore@ejemplo.com',
-            'especialidad' => 'fisioterapia',
-
-        ]);
-
-
-        Consultorio::create([
-
-        'nombre' => '1',
-        'capacidad' => '8 horas',
-        'especialidad' => 'fisioterapia',
-        'estado' => 'ACTIVO',
-
-        ]);
-
-
         
-
-        
-
-        $this->call([PacienteSeeder::class]);
-
-        $this->call([
-            EventSeeder::class
-        ]);
     }
 }

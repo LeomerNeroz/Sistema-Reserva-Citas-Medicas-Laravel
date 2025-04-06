@@ -14,7 +14,7 @@ class PacienteSeeder extends Seeder
      */
     public function run()
     {
-        Paciente::factory()->count(200)->create();
+        
     }
 }
 
