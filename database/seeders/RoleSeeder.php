@@ -98,6 +98,7 @@ class RoleSeeder extends Seeder
         
         $secretariaPermissions = [
             'admin.pacientes.index',
+            'admin.pacientes.create',
             'admin.pacientes.store',
             'admin.pacientes.show',
             'admin.pacientes.edit',

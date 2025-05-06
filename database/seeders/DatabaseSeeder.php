@@ -40,5 +40,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
         
+        $this->call([DoctorSeeder::class]);
+        $this->call([ConsultorioSeeder::class]);
+        $this->call([PacienteSeeder::class]);
+        $this->call([EventSeeder::class]);
+        $this->call([ReservaSeeder::class]);
+        $this->call([HorarioSeeder::class]);
+        $this->call([SecurityQuestionsSeeder::class]);
+        $this->call([HistorialSeeder::class]);
+
+
+
+
     }
 }

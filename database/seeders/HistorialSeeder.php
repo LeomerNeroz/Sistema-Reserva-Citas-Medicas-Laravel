@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Event;
+use App\Models\Historial;
 use Illuminate\Database\Seeder;
 
-class EventSeeder extends Seeder
+class HistorialSeeder extends Seeder
 {
     public function run()
     {
        
-        Event::factory()->count(100)->create();
+        Historial::factory()->count(200)->create();
     }
 }
